@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
+
+/*Reset default padding and margins for all elements*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Styling for the header element*/
+header {
+    padding: 1.1rem 6.5rem;
+}
+
+/*Styling for the nav element*/
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Styling for the ul element*/
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Styling for the list items in the ul element*/
+header ul li {
+    text-transform: uppercase;
+    margin-left: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-family: 'Karla', sans-serif;
+}
+
+/*Styling for the a tags in the list items in the ul element*/
+header ul li a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+/*Change the first three list items on hover*/
+header ul li:nth-child(1):hover,
+header ul li:nth-child(2):hover,
+header ul li:nth-child(3):hover {
+    font-weight: 700;
+}
+
+/*Styling for the view plans button*/
+header ul li:nth-child(4) a {
+    border: thin solid black;
+    padding: 0.5rem 1.5rem;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+header ul li:hover:nth-child(4) a {
+    color: white;
+    background-color: black;
+}
+
+/*Styling for the hamburger*/
+header nav .hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+/*Styling for the main content on the page*/
+/*Styling for the first div*/
+main .first-div {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+}
+
+/*Styling for the text-div in the first div*/
+main .first-div .text-div {
+    grid-row: 1 / span 6;
+    grid-column: 1 / span 10;
+    background-color: hsl(256, 26%, 20%);
+    color: white;
+    font-family: 'DM Serif Display', serif;
+    padding: 3rem 7rem ;
+}
+
+/*Styling for the hr in the first div*/
+main .first-div .text-div hr {
+    width: 9%;
+    margin-bottom: 1.5vh;
+}
+
+/*Styling for the h1 in the first div*/
+main .first-div .text-div h1 {
+    font-size: clamp(1rem, 3.5vw, 3rem);
+    margin-bottom: 2vh;
+    padding-right: 70%;
+}
+
+/*Styling for the p tag in the first div*/
+main .first-div .text-div p:nth-of-type(1) {
+    font-size: clamp(0.1rem, 1.2vw, 4rem);
+    font-family: 'Karla', sans-serif;
+    margin-bottom: 5vh;
+    padding-right: 55%;
+}
+
+/*Styling for the second p tag in the first div*/
+main .first-div .text-div p:nth-of-type(2) a {
+    border: thin solid white;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-family: 'Karla', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+/*Styling for the a tag in the first div*/
+main .first-div .text-div p:hover:nth-of-type(2) a {
+    background-color: white;
+    color:hsl(256, 26%, 20%);
+}
+
+main .first-div .image-div {
+    grid-row: 2 / span 6;
+    grid-column: 5 / span 6;
+    background-image: url("Assets/image-intro-desktop.jpg");
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+}
