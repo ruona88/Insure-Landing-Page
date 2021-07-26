@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Karla:wght@400;700&display=swap');
 
 /*Reset default padding and margins for all elements*/
+
+/*
+font-family: 'DM Serif Display', serif;
+font-family: 'Karla', sans-serif;
+*/
 * {
     padding: 0;
     margin: 0;
@@ -10,17 +15,24 @@
 /*Styling for the header element*/
 header {
     padding: 1.1rem 6.5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    background-color: white;
 }
 
 /*Styling for the nav element*/
-header nav {
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 
 /*Styling for the ul element*/
-header nav ul {
+nav ul {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -28,57 +40,93 @@ header nav ul {
 }
 
 /*Styling for the list items in the ul element*/
-header ul li {
+nav ul li {
     text-transform: uppercase;
     margin-left: 2rem;
     padding: 0.5rem 1.5rem;
     font-family: 'Karla', sans-serif;
+    font-size: 1.3vw;
 }
 
 /*Styling for the a tags in the list items in the ul element*/
-header ul li a {
+nav ul li a {
     color: black;
     text-decoration: none;
     transition: all 0.1s ease-in-out;
 }
 
 /*Change the first three list items on hover*/
-header ul li:nth-child(1):hover,
-header ul li:nth-child(2):hover,
-header ul li:nth-child(3):hover {
+nav ul li:nth-child(1):hover,
+nav ul li:nth-child(2):hover,
+nav ul li:nth-child(3):hover {
     font-weight: 700;
 }
 
 /*Styling for the view plans button*/
-header ul li:nth-child(4) a {
+nav ul li:nth-child(4) a {
     border: thin solid black;
     padding: 0.5rem 1.5rem;
     letter-spacing: 0.1rem;
     transition: all 0.3s ease-in-out;
 }
 
-header ul li:hover:nth-child(4) a {
+nav ul li:hover:nth-child(4) a {
     color: white;
     background-color: black;
 }
 
 /*Styling for the hamburger*/
-header nav .hamburger {
+nav .hamburger-container {
     cursor: pointer;
     display: none;
+    width: 35px;
+    height: 35px;
+    background-image: url("Assets/icon-hamburger.svg");
+    background-repeat: no-repeat;
 }
 
-/*Styling for the main content on the page*/
+
+/*Styling for the main content on the page
+___________________________________________________________________________________________________________________________________________
+*/
 /*Styling for the first div*/
-main .first-div {
+.first-div {
     height: 100vh;
+    min-height: 650px;
     display: grid;
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(10, 1fr);
+    position: relative;
+    top: 70px;
+}
+
+/*before pseudo for the image on the right*/
+.first-div::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: 0;
+    height: 550px;
+    width: 250px;
+    background-image: url("Assets/bg-pattern-intro-right-desktop.svg");
+    background-repeat: no-repeat;
+}
+
+/*after pseudo for the image on the left*/
+.first-div::after {
+    content: "";
+    position: absolute;
+    top: 300px;
+    left: 0;
+    height: 370px;
+    width: 150px;
+    background-image: url("Assets/bg-pattern-intro-left-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 80%;
 }
 
 /*Styling for the text-div in the first div*/
-main .first-div .text-div {
+.first-div .text-div {
     grid-row: 1 / span 6;
     grid-column: 1 / span 10;
     background-color: hsl(256, 26%, 20%);
@@ -88,20 +136,20 @@ main .first-div .text-div {
 }
 
 /*Styling for the hr in the first div*/
-main .first-div .text-div hr {
+.first-div .text-div hr {
     width: 9%;
     margin-bottom: 1.5vh;
 }
 
 /*Styling for the h1 in the first div*/
-main .first-div .text-div h1 {
+.first-div .text-div h1 {
     font-size: clamp(1rem, 3.5vw, 3rem);
     margin-bottom: 2vh;
     padding-right: 70%;
 }
 
 /*Styling for the p tag in the first div*/
-main .first-div .text-div p:nth-of-type(1) {
+.first-div .text-div p:nth-of-type(1) {
     font-size: clamp(0.1rem, 1.2vw, 4rem);
     font-family: 'Karla', sans-serif;
     margin-bottom: 5vh;
@@ -109,7 +157,7 @@ main .first-div .text-div p:nth-of-type(1) {
 }
 
 /*Styling for the second p tag in the first div*/
-main .first-div .text-div p:nth-of-type(2) a {
+.first-div .text-div p:nth-of-type(2) a {
     border: thin solid white;
     color: white;
     padding: 0.5rem 1.5rem;
@@ -124,16 +172,198 @@ main .first-div .text-div p:nth-of-type(2) a {
 }
 
 /*Styling for the a tag in the first div*/
-main .first-div .text-div p:hover:nth-of-type(2) a {
+.first-div .text-div p:hover:nth-of-type(2) a {
     background-color: white;
     color:hsl(256, 26%, 20%);
 }
 
-main .first-div .image-div {
+.first-div .image-div {
     grid-row: 2 / span 6;
     grid-column: 5 / span 6;
     background-image: url("Assets/image-intro-desktop.jpg");
     background-position: center;
     background-size: 65%;
     background-repeat: no-repeat;
+}
+
+/*Styling for the div-two*/
+.div-two {
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+    margin-bottom: 90px;
+}
+
+/*Styling for the hr element*/
+.div-two hr {
+    width: 10%;
+    margin-bottom: 40px;
+}
+
+/*The h1 in div-two*/
+.div-two h1 {
+    font-size: 4vw;
+    margin-bottom: 50px;
+    font-family: 'DM Serif Display', serif;
+}
+
+/*Styling for the flexbox*/
+.flex-items-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 80px;
+}
+
+.flex-item {
+    margin-right: 25px;
+}
+
+/*Style for image on the divs*/
+.image-container {
+    margin-bottom: 30px;
+}
+
+/*h2 test in the affordable pricing*/
+.message {
+    margin-bottom: 30px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 2vw;
+    font-weight: 100;
+}
+
+.flex-item-text {
+    font-size: 1.1vw;
+    font-family: 'Karla', sans-serif;
+    color: hsl(256, 26%, 20%)
+}
+
+/*
+_________________________________________________________________________________________________________________________________________
+Styling for the box-div*/
+.the-box-div {
+    border: thin solid black;
+    background-color: hsl(256, 26%, 20%);
+    display: flex;
+    flex-direction: row;
+    min-height: 80px;
+    background-image: url("Assets/bg-pattern-how-we-work-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: center right -90px;    
+}
+
+.the-box-div p {
+    width: 25%;
+    padding: 40px 7rem;
+    color: white;
+    font-size: 4.2vw;
+    width: 60%;
+}
+
+.the-box-div .btn-container {
+    padding-top: 100px;
+    padding-left: 13rem;
+}
+
+.the-box-div .btn-container a {
+    color: white;
+    text-decoration: none;
+    border: thin solid white;
+    font-family: 'Karla', sans-serif;
+    padding: 13px 30px;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+}
+
+.the-box-div .btn-container a:hover {
+    color:hsl(256, 26%, 20%);
+    background-color: white
+}
+
+/*
+-------------------------------------------------------------------------------------------------------------------------------------
+Styling for the footer
+*/
+
+footer {
+    background-color: hsl(0, 0%, 98%);
+    padding-top: 60px;
+    padding-bottom: 40px;
+    padding-right: 6.5rem;
+    padding-left: 6.5rem;
+    background-image: url("Assets/bg-pattern-footer-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: top 0px left -150px;
+}
+
+footer hr {
+    margin-bottom: 40px;
+}
+
+.flex-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.SM-container img {
+    cursor: pointer;
+}
+
+.SM-container img:hover {
+    filter: brightness(0.2)
+}
+
+.SM-container img:nth-of-type(1),
+.SM-container img:nth-of-type(2),
+.SM-container img:nth-of-type(3) {
+    margin-right: 16px;
+}
+
+.footer-flex-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: 'Karla', sans-serif;
+}
+
+.footer-flex-container .footer-flex-item:nth-of-type(1),
+.footer-flex-container .footer-flex-item:nth-of-type(2),
+.footer-flex-container .footer-flex-item:nth-of-type(3) {
+    margin-right: 210px;
+}
+
+.footer-flex-item p {
+    color:hsl(256, 26%, 20%);
+    text-transform: uppercase;
+    font-size: 1.3vw;
+    margin-bottom: 45px;
+}
+
+.footer-flex-item ul li {
+    font-size: 1.1vw;
+    color: black;
+    font-weight: 700;
+    margin-bottom: 12px;
+    list-style-type: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    border: thin solid white;
+}
+
+.footer-flex-item ul li::before {
+    position: absolute;
+    content: "";
+    background-color: hsl(256, 26%, 20%);
+    width: 70%;
+    height: 1px;
+    margin: auto;
+    top: 100%;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.footer-flex-item ul li:hover::before {
+    transform: scale(1);
 }
