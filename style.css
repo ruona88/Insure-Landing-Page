@@ -19,7 +19,7 @@ header {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1;
+    z-index: 3;
     background-color: white;
 }
 
@@ -100,60 +100,42 @@ ________________________________________________________________________________
     top: 70px;
 }
 
-/*before pseudo for the image on the right*/
-.first-div::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    right: 0;
-    height: 550px;
-    width: 250px;
-    background-image: url("Assets/bg-pattern-intro-right-desktop.svg");
-    background-repeat: no-repeat;
-}
-
-/*after pseudo for the image on the left*/
-.first-div::after {
-    content: "";
-    position: absolute;
-    top: 300px;
-    left: 0;
-    height: 370px;
-    width: 150px;
-    background-image: url("Assets/bg-pattern-intro-left-desktop.svg");
-    background-repeat: no-repeat;
-    background-size: 80%;
+.first-div .colored-div {
+    background-color: hsl(256, 26%, 20%);
+    grid-row: 1 / span 6;
+    grid-column: 1 / span 10;
+    z-index: -1;
 }
 
 /*Styling for the text-div in the first div*/
 .first-div .text-div {
     grid-row: 1 / span 6;
-    grid-column: 1 / span 10;
+    grid-column: 1 / span 5;
     background-color: hsl(256, 26%, 20%);
     color: white;
     font-family: 'DM Serif Display', serif;
-    padding: 3rem 7rem ;
+    padding: 3rem 0rem 3rem 7rem;
 }
 
 /*Styling for the hr in the first div*/
 .first-div .text-div hr {
     width: 9%;
-    margin-bottom: 1.5vh;
+    margin-bottom: 15px;
 }
 
 /*Styling for the h1 in the first div*/
 .first-div .text-div h1 {
-    font-size: clamp(1rem, 3.5vw, 3rem);
-    margin-bottom: 2vh;
-    padding-right: 70%;
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+    padding-right: 4rem;
 }
 
 /*Styling for the p tag in the first div*/
 .first-div .text-div p:nth-of-type(1) {
-    font-size: clamp(0.1rem, 1.2vw, 4rem);
+    font-size: 1.0rem;
     font-family: 'Karla', sans-serif;
-    margin-bottom: 5vh;
-    padding-right: 55%;
+    margin-bottom: 25px;
+    padding-right: 5rem;
 }
 
 /*Styling for the second p tag in the first div*/
@@ -178,12 +160,39 @@ ________________________________________________________________________________
 }
 
 .first-div .image-div {
-    grid-row: 2 / span 6;
+    position: relative;
+    top: 55px;
+    grid-row: 1 / span 6;
     grid-column: 5 / span 6;
     background-image: url("Assets/image-intro-desktop.jpg");
     background-position: center;
-    background-size: 65%;
     background-repeat: no-repeat;
+}
+
+/*before pseudo for the image on the right*/
+.first-div::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: 0;
+    height: 550px;
+    width: 250px;
+    background-image: url("Assets/bg-pattern-intro-right-desktop.svg");
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+/*after pseudo for the image on the left*/
+.first-div::after {
+    content: "";
+    position: absolute;
+    top: 300px;
+    left: 0;
+    height: 370px;
+    width: 150px;
+    background-image: url("Assets/bg-pattern-intro-left-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: 80%;
 }
 
 /*Styling for the div-two*/
@@ -243,6 +252,8 @@ Styling for the box-div*/
     border: thin solid black;
     background-color: hsl(256, 26%, 20%);
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
     min-height: 80px;
     background-image: url("Assets/bg-pattern-how-we-work-desktop.svg");
@@ -252,15 +263,18 @@ Styling for the box-div*/
 
 .the-box-div p {
     width: 25%;
-    padding: 40px 7rem;
     color: white;
-    font-size: 4.2vw;
+    font-size: 3.2vw;
+    padding: 65px 3.5rem;
     width: 60%;
 }
 
 .the-box-div .btn-container {
-    padding-top: 100px;
+    /*padding-top: 100px;
     padding-left: 13rem;
+    padding-right: 2rem;*/
+    
+    padding-right: 3.5rem;
 }
 
 .the-box-div .btn-container a {

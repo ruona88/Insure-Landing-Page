@@ -1,1 +1,5 @@
-/*Media Queries for Tablets in potrait orientation*/
+/*Media Queries*/
+/*Media queries to the first-div to flex-box,   */
+@media only screen and (max-width: 1250px) {
+    /*Change the first-div to flex*/
+}
