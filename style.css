@@ -12,6 +12,11 @@ font-family: 'Karla', sans-serif;
     box-sizing: border-box;
 }
 
+body {
+    max-width: 1600px;
+    margin: auto;
+}
+
 /*Styling for the header element*/
 header {
     padding: 1.1rem 6.5rem;
@@ -21,6 +26,7 @@ header {
     left: 0;
     z-index: 3;
     background-color: white;
+    transition: all 0.3s ease-in-out;
 }
 
 /*Styling for the nav element*/
@@ -28,6 +34,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
     transition: all 0.3s ease-in-out;
 }
 
@@ -115,6 +122,18 @@ ________________________________________________________________________________
     color: white;
     font-family: 'DM Serif Display', serif;
     padding: 3rem 0rem 3rem 7rem;
+    position: relative;
+}
+
+.first-div .image-div {
+    position: relative;
+    top: 55px;
+    grid-row: 1 / span 6;
+    grid-column: 6 / span 4;
+    background-image: url("Assets/image-intro-desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 
 /*Styling for the hr in the first div*/
@@ -125,14 +144,14 @@ ________________________________________________________________________________
 
 /*Styling for the h1 in the first div*/
 .first-div .text-div h1 {
-    font-size: 3.2rem;
+    font-size: 2.9vw;
     margin-bottom: 20px;
     padding-right: 4rem;
 }
 
 /*Styling for the p tag in the first div*/
 .first-div .text-div p:nth-of-type(1) {
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     font-family: 'Karla', sans-serif;
     margin-bottom: 25px;
     padding-right: 5rem;
@@ -157,16 +176,6 @@ ________________________________________________________________________________
 .first-div .text-div p:hover:nth-of-type(2) a {
     background-color: white;
     color:hsl(256, 26%, 20%);
-}
-
-.first-div .image-div {
-    position: relative;
-    top: 55px;
-    grid-row: 1 / span 6;
-    grid-column: 5 / span 6;
-    background-image: url("Assets/image-intro-desktop.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 /*before pseudo for the image on the right*/
@@ -200,6 +209,7 @@ ________________________________________________________________________________
     padding-left: 6.5rem;
     padding-right: 6.5rem;
     margin-bottom: 90px;
+    position: relative;
 }
 
 /*Styling for the hr element*/
@@ -220,6 +230,7 @@ ________________________________________________________________________________
     display: flex;
     flex-direction: row;
     margin-bottom: 80px;
+    transition: all 0.3s ease-in-out;
 }
 
 .flex-item {
@@ -249,7 +260,6 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________________________________
 Styling for the box-div*/
 .the-box-div {
-    border: thin solid black;
     background-color: hsl(256, 26%, 20%);
     display: flex;
     justify-content: space-between;
@@ -270,10 +280,6 @@ Styling for the box-div*/
 }
 
 .the-box-div .btn-container {
-    /*padding-top: 100px;
-    padding-left: 13rem;
-    padding-right: 2rem;*/
-    
     padding-right: 3.5rem;
 }
 
@@ -338,12 +344,14 @@ footer hr {
     justify-content: flex-start;
     align-items: flex-start;
     font-family: 'Karla', sans-serif;
+    transition: all 0.3s ease-in-out;
 }
 
-.footer-flex-container .footer-flex-item:nth-of-type(1),
-.footer-flex-container .footer-flex-item:nth-of-type(2),
-.footer-flex-container .footer-flex-item:nth-of-type(3) {
-    margin-right: 210px;
+.footer-flex-item:nth-of-type(1),
+.footer-flex-item:nth-of-type(2),
+.footer-flex-item:nth-of-type(3),
+.footer-flex-item:nth-of-type(4) {
+    margin-right: 13vw;    
 }
 
 .footer-flex-item p {
@@ -380,4 +388,333 @@ footer hr {
 
 .footer-flex-item ul li:hover::before {
     transform: scale(1);
+}
+
+
+
+
+
+/*Media queries*/
+/*Media queries to change the navigation */  
+@media only screen and (max-width: 1120px) {
+    
+    header {
+        padding: 1.1rem 3.0rem 
+    }
+    
+    .first-div {
+        height: 100vh;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        top: 70px;
+    }
+    
+    .first-div .colored-div {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    /*Styling for the text-div in the first div*/
+    .first-div .text-div {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        text-align: center;
+    }
+
+    .first-div .text-div::after {
+        position: absolute;
+        content: "";
+        background-image: url("Assets/bg-pattern-intro-left-mobile.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 250px;
+        width: 17vw;
+        top: 0;
+        left: 0;
+    }
+
+    .first-div .text-div::before {
+        content: "";
+        position: absolute;
+        top: 53vh;
+        right: 0px;
+        background-image: url("Assets/bg-pattern-intro-right-mobile.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 20vw;  
+        height: 350px;    
+    }
+
+    .first-div .text-div h1 {
+        font-size: 3.5rem;
+        margin-bottom: 40px;
+    }
+
+    .first-div .text-div p:nth-of-type(1) {
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+    }
+
+    .first-div .text-div p:nth-of-type(2) {
+        margin-bottom: 40px;
+    }
+
+    .first-div .text-div p:nth-of-type(2) a {
+        font-size: 1.5rem;
+        padding: 0.5rem 3.5rem;
+        margin-right: 17%;
+    }
+
+    .first-div .text-div hr {
+        display: none;
+    }
+    
+    .first-div .image-div {
+        top: 0px;
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+        background-image: url("Assets/image-intro-mobile.jpg");
+        background-size: 100% 100%;
+        background-position: center center
+    }
+
+    .first-div::after {
+        background-size: 0%;
+    }
+
+    .first-div::before {
+        width: 0vw;       
+    }
+
+    /*Styling for div-two*/
+    .div-two {
+        position: relative;
+        top: 120px;
+    }
+
+    .div-two h1 {
+        font-size: 2.5rem;
+    }
+    
+    .flex-item h2 {
+        font-size: 1.7rem;
+    }
+
+    .flex-item p {
+        font-size: 1.1rem;
+    }
+
+    .footer-flex-item p {
+        font-size: 1.2rem;
+    }
+
+    .footer-flex-item ul li {
+        font-size: 1.1rem;
+    }
+
+    .footer-flex-container .footer-flex-item:nth-of-type(1),
+    .footer-flex-container .footer-flex-item:nth-of-type(2),
+    .footer-flex-container .footer-flex-item:nth-of-type(3),
+    .footer-flex-container .footer-flex-item:nth-of-type(4) {
+         margin-right: 10vw;    
+    }
+
+    footer {
+        position: relative;
+        top: 70px;
+    }
+}
+
+
+/*Change the navigation to he hamburger button*/
+@media only screen and (max-width: 870px) {
+
+   /*Change the display for the ul tag*/
+    nav ul {
+        position: fixed;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: hsl(256, 26%, 20%);
+        left: 0;
+        top: 71px;
+        width: 100%;
+        height: 100vh;
+        padding-top: 80px;
+        background-image: url("Assets/bg-pattern-mobile-nav.svg");
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 100% 32%;
+        transform: scale(0);
+        opacity: 0;
+        transform-origin: top;
+        transition: all 0.4s ease-in-out
+    }
+
+    /*To be toggled with javascript*/
+    nav ul.active {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    /*Change the display for the li tags ul tag*/
+    nav ul li {
+        font-size: 1.7rem;
+        margin-bottom: 25px;
+    }
+
+    /*Change the color fo the textx in the li tags*/
+    nav ul li a {
+        color: white;
+    }
+
+    /*Change the styling for the a tag in the 4th list item*/
+    nav ul li:nth-child(4) a {
+        border: thin solid white;
+    }
+
+    /*Make the hamburger appear*/
+    nav .hamburger-container {
+        display: block;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /*To be toggled with javascript*/
+    nav .hamburger-container.active {
+        background-image: url("Assets/icon-close.svg");
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .the-box-div {
+        flex-direction: column;
+        padding-bottom: 60px; 
+        background-image: url("Assets/bg-pattern-how-we-work-mobile.svg");   
+        background-position: top right;   
+        padding: 2rem 4rem 4rem 4rem;
+        background-size: 20vw;
+    }
+
+    .the-box-div p {
+        width: 100%;
+        font-size: 3.0rem;
+        text-align: center; 
+        padding: 0;
+        margin-bottom: 50px;
+    }
+
+    .the-box-div .btn-container {
+        padding-right: 0;
+    }
+
+    .the-box-div .btn-container a {
+        font-size: 1.3rem;
+        padding: 1rem 2rem;
+    }
+
+    .footer-flex-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 65px;
+    }
+
+    .our-company-div {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .help-me-div {
+        grid-row: 1 / span 1;
+        grid-column: 2 / span 1;
+    }
+    
+    .contact-div {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .others-div {
+        grid-row: 2 / span 1;
+        grid-column: 2 / span 1;
+    }
+
+    /*Change flex-direction and set other footer styles*/
+    .div-two hr {
+       width: 85%;
+       margin: auto;
+       margin-top: 90px;
+       margin-bottom: 40px;
+    }
+
+    .div-two h1 {
+        text-align: center;
+        font-size: 3.5rem;
+    }
+
+    .div-two .flex-items-container {
+        flex-direction: column;
+    }
+
+    .div-two .flex-items-container .flex-item {
+        margin-bottom: 80px;
+        text-align: center;
+    }
+
+    .div-two .flex-items-container .flex-item h2 {
+        font-size: 2.4rem;
+    }
+    .div-two .flex-items-container .flex-item p {
+        font-size: 2.1rem;
+    } 
+}
+
+@media only screen and (max-width: 700px) {
+
+    .footer-flex-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-row-gap: 55px;
+        text-align: center;
+    }
+
+    .our-company-div {
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .help-me-div {
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    .contact-div {
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .others-div {
+        grid-row: 4 / span 1;
+        grid-column: 1 / span 1;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    html {
+        font-size: 14px;
+    }
+
+    .flex-logo {
+        flex-direction: column;
+    }
+
+    .flex-logo-container {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    html {
+        font-size: 10px;
+    }
 }
